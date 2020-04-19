@@ -25,8 +25,9 @@ Things you may want to cover:
 |password|string|null: false|
 
 ### Association
-- belongs_to :group_user
-- has_many :message
+- has_many :group_users
+  has_many :groups, through: :group_users
+- has_many :messages
 
 
 
@@ -37,7 +38,9 @@ Things you may want to cover:
 |group_name|integer|null: false|
 
 ### Association
-- belongs_to :group_user
+- has_many :group_users
+  has_many :users, through: :group_users
+  has_many :messages
 
 
 ## groups_usersテーブル
@@ -60,6 +63,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+  belongs_to :group
 
 <!-- データベースの初期化 -->
 * Database initialization
