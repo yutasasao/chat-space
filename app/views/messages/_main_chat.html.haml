@@ -1,0 +1,30 @@
+.main-chat
+ .main-chat__group-info
+  %ul.main-chat__group-info__group-detail
+   %li.main-chat__group-info__group-detail__group-name
+    test
+   %li.main-chat__group-info__group-detail__user-name
+    member : masa
+  %p.main-chat__group-info__edit
+   = link_to "#" do
+    edit 
+    
+ .main-chat__message-list
+  .main-chat__message-list__info
+   = link_to "#" do
+    .main-chat__message-list__info__upper
+     %p.main-chat__message-list__info__upper__talker
+      masa
+     %p.main-chat__message-list__info__upper__date
+      2020/04/18(SAT) 12:00:00
+    %p.main-chat__message-list__info__text
+     おはよう
+  
+ .main-chat__message-form
+  %form.new_message
+   .main-chat__message-form__input-box
+    %input{type: "text", class: "main-chat__message-form__input-box__text", placeholder: "type a message"}
+    %label{class: "main-chat__message-form__input-box__image"} 
+     = icon("fas", "image")
+     %input{type: "file", class: "main-chat__message-form__input-box__image__file"}
+   %input{type: "submit", class: "main-chat__message-form__submit-btn"}
