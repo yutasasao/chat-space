@@ -9,10 +9,65 @@ Things you may want to cover:
 
 * System dependencies
 
+<!-- 構成 -->
 * Configuration
 
-* Database creation
 
+<!-- データベースの作成 -->
+* Database creation　
+
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false, index:true|
+|adress|string|null: false|
+|password|string|null: false|
+
+### Association
+- has_many :group_users
+  has_many :groups, through: :group_users
+- has_many :messages
+
+
+
+## groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many :group_users
+  has_many :users, through: :group_users
+  has_many :messages
+
+
+## groups_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
+## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|body|text|
+|image|image|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+  belongs_to :group
+
+<!-- データベースの初期化 -->
 * Database initialization
 
 * How to run the test suite
