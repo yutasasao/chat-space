@@ -33,7 +33,8 @@
           margin-left: 5px;
 
         a{
-          color: #ffffff;
+          color: $mainWhiteColor;
+          
         }
 
         }
@@ -56,7 +57,7 @@
 
       p {
         font: bold;
-        color: #ffffff;
+        color: $mainWhiteColor;
       }
 
       &__group-name {
@@ -75,7 +76,7 @@
 .main-chat {
   height: 100vw;
   width: calc(100vw - 300px);
-  background-color: #ffffff;
+  background-color: $mainWhiteColor;
   float: left;
   
   &__group-info {
@@ -188,7 +189,7 @@
           }
         }
        }
-       
+
       &__submit-btn {
         width: 100px;
         height: 50px;
