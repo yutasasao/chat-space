@@ -3,11 +3,13 @@
   box-sizing: border-box;
 }
 
+.wrapper {
+display: flex;
 .side-bar {
-  height: 100vw;
+  height: 100vh;
   width: 300px;
   background-color: #253141;
-  float: left;
+  // float: left;
   &__user {
     height: 100px;
     display: flex;
@@ -74,10 +76,10 @@
 }
 
 .main-chat {
-  height: 100vw;
+  height: 100vh;
   width: calc(100vw - 300px);
   background-color: $mainWhiteColor;
-  float: left;
+  // float: left;
   
   &__group-info {
     height: 100px;
@@ -202,5 +204,7 @@
        }
   
   }
+
+}
 
 }
