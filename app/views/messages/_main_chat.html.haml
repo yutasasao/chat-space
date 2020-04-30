@@ -4,6 +4,7 @@
       %li.main-chat__group-info__group-detail__group-name
         = @group.name
       %li.main-chat__group-info__group-detail__user-name
+        Member:
         - @group.users.each do |user|
           = user.name
     %p.main-chat__group-info__edit
